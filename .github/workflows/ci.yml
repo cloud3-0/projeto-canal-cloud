@@ -1,0 +1,19 @@
+name: Projeto Time-3
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache
+        uses: actions/cache@v3.3.2
+      - name: HashiCorp - Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.3
+      - name: Iniciando Terraform
+        run: terraform init 
+      - name: Planejando Terraform
+        run: terraform plan
+      - name: Aplicando Terraform
+        run: terraform apply -auto-approve
