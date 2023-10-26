@@ -3,13 +3,19 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: read   
+     
 jobs:
   terraform:
     env: 
+      tenant_id: ${{ secrets.tenant_id }}
+      subscription_id: ${{ secrets.subscription_id }}
       client_id: ${{ secrets.client_id }}
       client_secret: ${{ secrets.client_secret }}
-      subscription_id: ${{ secrets.subscription_id }}
-      tenant_id: ${{ secrets.tenant_id }}
+      
+      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
