@@ -17,8 +17,7 @@ jobs:
       client_id: ${{ secrets.client_id }}
       client_secret: ${{ secrets.client_secret }}
       
-    runs-on: ubuntu-latest
-    environment: production
+    runs-on: ubuntu-latest     
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
