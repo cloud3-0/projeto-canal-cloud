@@ -6,14 +6,15 @@ on:
 jobs:
   terraform:
     env: 
-      client_id: ${{secrets.client_id}}
-      client_secret: ${{secrets.client_secret}}
-      subscription_id: ${{secrets.subscription_id}}
-      tenant_id: ${{secrets.tenant_id}}
+      client_id: ${{ secrets.client_id }}
+      client_secret: ${{ secrets.client_secret }}
+      subscription_id: ${{ secrets.subscription_id }}
+      tenant_id: ${{ secrets.tenant_id }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
         
