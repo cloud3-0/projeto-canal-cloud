@@ -9,8 +9,8 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  skip_provider_registration = true 
-  features {}   
+  skip_provider_registration = true
+  features {}
 }
 
 # Create a resource group
